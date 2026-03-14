@@ -59,6 +59,28 @@ npm run dev
 npm run validate
 ```
 
+### Running with PM2 (Production)
+
+To run the application in the background using PM2:
+
+1. Install PM2 globally:
+   ```bash
+   npm install -g pm2
+   ```
+2. Generate `swagger.json` if you haven't already:
+   ```bash
+   npm run convert
+   ```
+3. Start the application using the configuration file:
+   ```bash
+   pm2 start ecosystem.config.js
+   ```
+4. Save the PM2 process list so it restarts on system reboot:
+   ```bash
+   pm2 save
+   pm2 startup
+   ```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
